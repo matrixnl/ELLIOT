@@ -46,3 +46,6 @@ app.use((req, res, next) => {
     res.locals.env = env;
     next();
 });
+
+const routes = require('./routes/index');
+app.use('/', routes);
