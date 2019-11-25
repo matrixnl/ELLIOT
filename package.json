@@ -1,0 +1,38 @@
+{
+  "name": "ELLIOT",
+  "version": "1.0.0",
+  "description": "animatEd taLking virtuaL assIstant chatbOT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matrixnl/ELLIOT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matrixnl/ELLIOT/issues"
+  },
+  "homepage": "https://github.com/matrixnl/ELLIOT#readme",
+  "dependencies": {
+    "aws-sdk": "^2.578.0",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^4.0.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-rev": "^9.0.0"
+  }
+}
