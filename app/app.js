@@ -8,3 +8,7 @@ const express = require('express'),
     config = require('./config/index')(),
     pugFunctions = require('./helpers/pug_functions'),
     path = require('path');
+
+// view engine setup
+app.set('views', path.join(__dirname, '../views'));
+app.set('view engine', 'pug');
