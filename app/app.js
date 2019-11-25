@@ -16,3 +16,17 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true  }));
+
+app.use(express.static(path.join(__dirname, '../public')));
+
+app.use(session({
+    store: new redisStore({
+        host: config.redis.host,
+        port: config.redis.port,
+        db: config.redis.db,
+        ttl: 3600
+    }),
+    secret: '1234567890abcdefghijk',
+    resave: true,
+    saveUninitialized: true
+}));
