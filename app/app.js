@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true  }));
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+//session middleware with redis
 app.use(session({
     store: new redisStore({
         host: config.redis.host,
@@ -30,3 +31,18 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+//set the config, helper and env variables
+app.use((req, res, next) => {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+
+    if(req.session.user){
+        res.locals.user = req.session.user;
+    }
+    res.locals.config = config;
+    res.locals.pugFunctions = pugFunctions;
+    res.locals.env = env;
+    next();
+});
