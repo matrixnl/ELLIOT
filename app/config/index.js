@@ -1,4 +1,4 @@
-const config = require("../../elliotCred.json");
+const config = require("/elliotCred.json");
 
 module.exports = () => {
   const env = process.env.NODE_ENV;
